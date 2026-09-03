@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Appointment Management</title>
+    <link rel="stylesheet" href="/css/style.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="sidebar">
+        <div class="brand">
+          <div class="brand-mark">A</div>
+          <div>
+            <h1>CareFlow</h1>
+          </div>
+        </div>
+
+        <nav class="nav-menu">
+          <button class="nav-link active" data-view="dashboard">Dashboard</button>
+          <button class="nav-link" data-view="appointments">Appointments</button>
+          <button class="nav-link" data-view="new-appointment">New Appointment</button>
+        </nav>
+      </aside>
+
+      <main class="main-panel">
+        <header class="topbar">
+          <div>
+            <p class="eyebrow">Clinic Overview</p>
+            <h2 id="pageTitle">Dashboard</h2>
+          </div>
+          <button id="newAppointmentBtn" class="primary-btn">+ New Appointment</button>
+        </header>
+
+        <div id="toast" class="toast"></div>
+
+        <section id="dashboardView" class="view active">
+          <div class="stats-grid">
+            <div class="stat-card">
+              <span>Total Appointments</span>
+              <strong id="totalAppointments">0</strong>
+            </div>
+            <div class="stat-card">
+              <span>Today's Appointments</span>
+              <strong id="todayAppointments">0</strong>
+            </div>
+            <div class="stat-card pending">
+              <span>Pending</span>
+              <strong id="pendingAppointments">0</strong>
+            </div>
+            <div class="stat-card completed">
+              <span>Completed</span>
+              <strong id="completedAppointments">0</strong>
+            </div>
+            <div class="stat-card cancelled">
+              <span>Cancelled</span>
+              <strong id="cancelledAppointments">0</strong>
+            </div>
+          </div>
+        </section>
+
+        <section id="appointmentsView" class="view">
+          <div class="toolbar">
+            <div class="filters">
+              <input id="searchPatient" type="text" placeholder="Search by patient" />
+              <input id="searchDoctor" type="text" placeholder="Search by doctor" />
+              <select id="statusFilter">
+                <option value="">All Statuses</option>
+                <option value="Pending">Pending</option>
+                <option value="Confirmed">Confirmed</option>
+                <option value="Completed">Completed</option>
+                <option value="Cancelled">Cancelled</option>
+              </select>
+              <input id="dateFilter" type="date" />
+            </div>
+            <button id="clearFiltersBtn" class="secondary-btn">Clear Filters</button>
+          </div>
+
+          <div class="table-wrapper">
+            <table>
+              <thead>
+                <tr>
+                  <th>Patient</th>
+                  <th>Doctor</th>
+                  <th>Department</th>
+                  <th>Date</th>
+                  <th>Time</th>
+                  <th>Status</th>
+                  <th>Actions</th>
+                </tr>
+              </thead>
+              <tbody id="appointmentTableBody"></tbody>
+            </table>
+          </div>
+        </section>
+
+        <section id="newAppointmentView" class="view">
+          <div class="panel-card">
+            <h3 id="formTitle">Create Appointment</h3>
+            <form id="appointmentForm" class="appointment-form">
+              <input type="hidden" id="appointmentId" />
+
+              <div class="field-group">
+                <label>Patient Name</label>
+                <input id="patient_name" name="patient_name" type="text" required />
+              </div>
+
+              <div class="field-group">
+                <label>Patient Phone</label>
+                <input id="patient_phone" name="patient_phone" type="tel" required />
+              </div>
+
+              <div class="field-group">
+                <label>Doctor Name</label>
+                <input id="doctor_name" name="doctor_name" type="text" required />
+              </div>
+
+              <div class="field-group">
+                <label>Department</label>
+                <select id="department" name="department" required>
+                  <option value="">Select department</option>
+                  <option value="Cardiology">Cardiology</option>
+                  <option value="Dermatology">Dermatology</option>
+                  <option value="General Medicine">General Medicine</option>
+                  <option value="Neurology">Neurology</option>
+                  <option value="Orthopedics">Orthopedics</option>
+                  <option value="Pediatrics">Pediatrics</option>
+                  <option value="Gynecology">Gynecology</option>
+                </select>
+              </div>
+
+              <div class="field-group">
+                <label>Appointment Date</label>
+                <input id="appointment_date" name="appointment_date" type="date" required />
+              </div>
+
+              <div class="field-group">
+                <label>Appointment Time</label>
+                <input id="appointment_time" name="appointment_time" type="time" required />
+              </div>
+
+              <div class="field-group">
+                <label>Status</label>
+                <select id="status" name="status">
+                  <option value="Pending">Pending</option>
+                  <option value="Confirmed">Confirmed</option>
+                  <option value="Completed">Completed</option>
+                  <option value="Cancelled">Cancelled</option>
+                </select>
+              </div>
+
+              <div class="field-group full-width">
+                <label>Notes</label>
+                <textarea id="notes" name="notes" rows="4" placeholder="Add appointment notes"></textarea>
+              </div>
+
+              <div class="form-actions">
+                <button type="submit" class="primary-btn">Save Appointment</button>
+                <button type="button" id="cancelFormBtn" class="secondary-btn">Cancel</button>
+              </div>
+            </form>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <script src="/js/app.js"></script>
+  </body>
+</html>

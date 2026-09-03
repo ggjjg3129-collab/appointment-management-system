@@ -1,0 +1,20 @@
+const express = require('express');
+const {
+  getAllAppointments,
+  getAppointmentById,
+  createAppointment,
+  updateAppointment,
+  deleteAppointment,
+  getDashboardStats
+} = require('../controllers/appointmentController');
+
+const router = express.Router();
+
+router.get('/appointments', getAllAppointments);
+router.get('/appointments/:id', getAppointmentById);
+router.post('/appointments', createAppointment);
+router.put('/appointments/:id', updateAppointment);
+router.delete('/appointments/:id', deleteAppointment);
+router.get('/dashboard/stats', getDashboardStats);
+
+module.exports = router;
