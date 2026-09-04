@@ -1,0 +1,4 @@
+[[redirects]]
+  from = "/api/*"
+  to = "http://saa-project-alb-1143019990.us-east-1.elb.amazonaws.com/api/:splat"
+  status = 200
