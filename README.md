@@ -19,17 +19,33 @@ The application provides an admin interface for managing patient appointments an
 
 ## Screenshots
 
-### Application Dashboard
+### 1. AWS Architecture
 
-![Application Dashboard](Screenshot%202026-09-04%20013453.png)
+![AWS Architecture](./Screenshot%202026-09-04%20013453.png)
 
-### AWS Deployment
+### 2. Application Load Balancer
 
-![AWS Deployment](Screenshot%202026-09-05%20014358.png)
+![Application Load Balancer](./Screenshot%202026-09-05%20014358.png)
 
-### AWS Infrastructure
+### 3. EC2 Instances and Target Group
 
-![AWS Infrastructure](Screenshot%202026-09-05%20014411.png)
+![EC2 Instances and Target Group](./Screenshot%202026-09-05%20014411.png)
+
+### 4. Amazon RDS MySQL
+
+![Amazon RDS MySQL](./Screenshot%202026-09-05%20014448.png)
+
+### 5. Appointment Management
+
+![Appointment Management](./Screenshot%202026-09-05%20014500.png)
+
+### 6. Database Verification
+
+![Database Verification](./Screenshot%202026-09-05%20014732.png)
+
+### 7. Application Dashboard
+
+![Application Dashboard](./Screenshot%202026-09-05%20015721.png)
 
 ## Architecture
 
