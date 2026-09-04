@@ -17,6 +17,20 @@ The application provides an admin interface for managing patient appointments an
 * Production deployment on AWS
 * Multiple EC2 instances behind an Application Load Balancer
 
+## Screenshots
+
+### Application Dashboard
+
+![Application Dashboard](Screenshot%202026-09-04%20013453.png)
+
+### AWS Deployment
+
+![AWS Deployment](Screenshot%202026-09-05%20014358.png)
+
+### AWS Infrastructure
+
+![AWS Infrastructure](Screenshot%202026-09-05%20014411.png)
+
 ## Architecture
 
 ```text
